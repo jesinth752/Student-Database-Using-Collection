@@ -62,7 +62,7 @@ public class StudentTest extends Thread {
         }
        catch(ExecutionException ee)
         {
-          log.info("Failed Uploading Try Again");
+          log.info("Failed to Creating database Try Again");
         
         }
      
@@ -94,7 +94,7 @@ public class StudentTest extends Thread {
         }
         catch (InterruptedException  e)
         {
-            log.info("Failed Uploading Try Again");
+            log.info("Failed !");
              Thread.currentThread().interrupt();
         }
         catch(ExecutionException ee)
@@ -123,12 +123,12 @@ public class StudentTest extends Thread {
         catch (InterruptedException e)
         {
             log.warning("InterruptedException: ");
-            log.info("Failed sorting Try again");
+            log.info("Failed !!");
              Thread.currentThread().interrupt();
         }
      catch(ExecutionException ee)
      {
-            log.warning("InterruptedException: ");
+        
             log.info("Failed sorting Try again");
      }
 
