@@ -1,9 +1,10 @@
 package org.example;
 
 import java.util.*;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
- class StudentDetails
+class StudentDetails
 {
     private String name;
     private int age;
@@ -33,7 +34,7 @@ import java.util.logging.Logger;
 
 
 public class StudentTest extends Thread {
-     public static final Logger log=Logger.getLogger("InfoLogging");
+    public static final Logger log=Logger.getLogger("InfoLogging");
     public static void main(String[] args) {
         String n;
         int age;
@@ -60,12 +61,8 @@ public class StudentTest extends Thread {
             log.info("Failed Try Again");
             Thread.currentThread().interrupt();
         }
-       catch(ExecutionException ee)
-        {
-          log.info("Failed to Creating database Try Again");
-        
-        }
-     
+
+
         rec=records+" records created";
         log.info(rec);
         for(int i=1;i<=records;i++) {
@@ -95,12 +92,7 @@ public class StudentTest extends Thread {
         catch (InterruptedException  e)
         {
             log.info("Failed !");
-             Thread.currentThread().interrupt();
-        }
-        catch(ExecutionException ee)
-        {
-          log.info("Failed Uploading Try Again");
-        
+            Thread.currentThread().interrupt();
         }
 
         Collections.sort(x, new Comparator<StudentDetails>() {
@@ -124,13 +116,9 @@ public class StudentTest extends Thread {
         {
             log.warning("InterruptedException: ");
             log.info("Failed !!");
-             Thread.currentThread().interrupt();
+            Thread.currentThread().interrupt();
         }
-     catch(ExecutionException ee)
-     {
-        
-            log.info("Failed sorting Try again");
-     }
+       
 
     }
 }
