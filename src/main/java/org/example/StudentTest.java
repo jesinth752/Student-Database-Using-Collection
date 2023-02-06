@@ -107,10 +107,16 @@ public class StudentTest extends Thread {
 
             }
         }
-        catch (Exception e)
+        catch (InterruptedException e)
         {
+            log.warning("InterruptedException: ");
             log.info("Failed sorting Try again");
         }
+     catch(ExecutionException ee)
+     {
+            log.warning("InterruptedException: ");
+            log.info("Failed sorting Try again");
+     }
 
     }
 }
