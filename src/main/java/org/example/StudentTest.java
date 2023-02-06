@@ -23,11 +23,11 @@ import java.util.logging.Logger;
         return gpa;
     }
 
-    StudentDetails(String N,int A,Double G)
+    StudentDetails(String n,int a,Double g)
     {
-        this.name=N;
-        this.age=A;
-        this.gpa=G;
+        this.name=n;
+        this.age=a;
+        this.gpa=g;
     }
 }
 
@@ -62,11 +62,11 @@ public class StudentTest extends Thread {
         rec=records+" records created";
         log.info(rec);
         for(int i=1;i<=records;i++) {
-            System.out.print("Enter Student Name :");
+            log.info("Enter Student Name :");
             n = input.next();
-            System.out.print("Enter Age : ");
+            log.info("Enter Age : ");
             age = input.nextInt();
-            System.out.print("Enter GPA : ");
+            log.info("Enter GPA : ");
             gradepoint = input.nextDouble();
 
             StudentDetails sd=new StudentDetails(n,age,gradepoint);
