@@ -85,9 +85,15 @@ public class StudentTest extends Thread {
 
             }
         }
-        catch (Exception e)
+        catch (InterruptedException  e)
         {
             log.info("Failed Uploading Try Again");
+             Thread.currentThread().interrupt();
+        }
+        catch(ExecutionException ee)
+        {
+          log.info("Failed Uploading Try Again");
+        
         }
 
         Collections.sort(x, new Comparator<StudentDetails>() {
