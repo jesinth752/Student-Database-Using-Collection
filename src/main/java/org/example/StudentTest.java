@@ -111,6 +111,7 @@ public class StudentTest extends Thread {
         {
             log.warning("InterruptedException: ");
             log.info("Failed sorting Try again");
+             Thread.currentThread().interrupt();
         }
      catch(ExecutionException ee)
      {
