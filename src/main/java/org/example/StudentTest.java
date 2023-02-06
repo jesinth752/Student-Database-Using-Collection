@@ -56,9 +56,16 @@ public class StudentTest extends Thread {
                 k=k+20;
             }
         }
-        catch (Exception E){
+        catch (InterruptedException   e){
             log.info("Failed Try Again");
+            Thread.currentThread().interrupt();
         }
+       catch(ExecutionException ee)
+        {
+          log.info("Failed Uploading Try Again");
+        
+        }
+     
         rec=records+" records created";
         log.info(rec);
         for(int i=1;i<=records;i++) {
